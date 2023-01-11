@@ -1,0 +1,24 @@
+{
+  "name": "pixi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byeaimebye/pixi.game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byeaimebye/pixi.game/issues"
+  },
+  "homepage": "https://github.com/byeaimebye/pixi.game#readme",
+  "description": "",
+  "dependencies": {
+    "@pixi/graphics-extras": "^7.0.5",
+    "pixi.js": "^7.0.5"
+  }
+}
