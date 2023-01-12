@@ -89,19 +89,99 @@ myText.style.wordWrapWidth = 100;
 myText.style.align = "center";
 
 
-/* app.ticker.add(delta => loop(delta));
+  app.ticker.add(delta => loop(delta));
 
 function loop(delta) {
-    const rectangle = new Graphics();
-    rectangle.beginFill(0xAA33BB)
-    .drawRect(Math.random() * app.screen.width, Math.random() * app.screen.height, 10, 10)
-    .endFill();
-    
-    app.stage.addChild(rectangle)
-}
- */
+   /*  char1Sprite.x += 1;  */
+/*  char1Sprite.rotation += 0.1; */
+} 
+ 
 
 /* const char1Texture = PIXI.Texture.from("/images/char1.png");
 const char1Sprite = new PIXI.Sprite(char1Texture); */
+
+/* create an instance call the image and put on the web */
 const char1Sprite = PIXI.Sprite.from("./images/char1.png")
 app.stage.addChild(char1Sprite)
+
+/* get styles (css properties)*/
+/* char1Sprite.width = 500
+char1Sprite.height = 400 */
+
+/* char1Sprite.scale.x = 1.5
+char1Sprite.scale.y = 2 */
+/* 
+char1Sprite.scale.set(2,2) */
+/* 
+char1Sprite.x = 200
+char1Sprite.y = 200
+ */
+
+char1Sprite.position.set(800, 400)
+/* char1Sprite.anchor.x = 0.5
+char1Sprite.anchor.y = 0.5 */
+
+char1Sprite.anchor.set(0.5, 0.5)
+
+char1Sprite.interactive = true 
+
+char1Sprite.buttonMode = true
+
+char1Sprite.on('pointerdown', function (){
+    char1Sprite.scale.x += 0.1;
+    char1Sprite.scale.y += 0.1;
+})
+
+document.addEventListener("keydown", function(e) {
+    if(e.key === "ArrowRight")
+    char1Sprite.x += 10;
+    if(e.key === "ArrowLeft")
+    char1Sprite.x -= 10;
+})
+
+const container = new PIXI.Container()
+
+const char2Sprite = PIXI.Sprite.from("./images/char2.png")
+container.addChild(char2Sprite)
+
+const char3Sprite = PIXI.Sprite.from("./images/char3.png")
+container.addChild(char3Sprite)
+
+app.stage.addChild(container)
+
+char2Sprite.position.set(1000, 500)
+
+container.x = 200
+
+console.log(char3Sprite.x)
+console.log(container.children)
+console.log(char3Sprite.getGlobalPosition())
+
+const particleContainer = new PIXI.ParticleContainer(1000, {
+    position: true,
+    rotation: true,
+    vertices: true,
+    tint: true,
+    uvs: true
+})
+
+const loader = PIXI.Loader.shared;
+
+loader.add( "./images/char4.png", "./images/csdsdhar5.png")
+.load(setup);
+
+function setup(loader, resources){
+    const char4Sprite = new PIXI.Sprite(
+        resources["./images/char4.png"].texture
+    )
+    char4Sprite.y = 400;
+    app.stage.addChild(char4Sprite);
+}
+
+loader.onLoad.add(function(){
+    console.log("onload")
+})
+
+loader.onError.add(function(){
+    console.log("error")
+})

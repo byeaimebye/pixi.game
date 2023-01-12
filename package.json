@@ -19,6 +19,10 @@
   "description": "",
   "dependencies": {
     "@pixi/graphics-extras": "^7.0.5",
-    "pixi.js": "^7.0.5"
+    "@pixi/loaders": "^6.5.8",
+    "build": "^0.1.4",
+    "npm": "^9.2.0",
+    "pixi.js": "^7.0.5",
+    "run": "^1.4.0"
   }
 }
